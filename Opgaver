@@ -1,4 +1,4 @@
-## Lektion 1 Øvelsesopgaver
+## Lektion 1 Øvelsesopgaver / Funktioner og variabler
 
 1. Lav en funktion der kan plusse to strings sammen (first name, last name) og vise resultatet i DOM´en.
 
@@ -14,7 +14,7 @@
    et ord som argument og "rense" det for alle vokaler inden det vises i DOM´en.
 
 
-## Lektion 2 Øvelsesopgaver
+## Lektion 2 Øvelsesopgaver / Numbers, Regex og String metoder
 
 1. Lav en funktion der kan tjekke om en værdi (argumentet) er en string eller et tal og vise det i DOM´en.
    Det skal gerne ende ud i at der eks. står: 123 er af typen: number, i DOM´en.
