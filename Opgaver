@@ -35,3 +35,7 @@
 
 7. Udbyg nu din funktion fra tidligere der kunne indsætte et element i DOM´en til at kunne tage imod resultatet fra din anden funktion. Det vil sige at man kan sætte BG-color på det nye element, ved blot at kalde din farve funktion.
 
+8. Lav en funktion der kan danne en tilfældig sætning. En sætning er opbygget af;
+   et navneord, et tillægsord og et udsagnsord. Lav derfor tre arrays af ord,
+   eks: ["jeg", "han", "hun", "dem", "de"] og ["kaster", "tegner", "giver", "henter"] og ["vand", "maling", "fyrværkeri"] osv... Brug nu det du har lært om Math.random til at lade tilfældighed vælge tre ord og sammensæt dem til en string. Vis til sidst stringen i DOM´en.
+
