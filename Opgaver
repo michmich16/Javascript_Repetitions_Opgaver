@@ -26,3 +26,12 @@
 4. Lav en funktion der kan give os et tilfældigt tal, mellem to input argumenter, eks. mellem 4 og 32. Tilføj en button til HTML´en og lav en onclick der kalder din funktion. Til slut skal følgende besked vises for brugeren: Vores tilfældige tal mellem _startværdi_ og _slutværdi_ er: _randomværdi_ `;
 
 5. Lav en funktion der returnerer en tilfældig RGB farve værdi og tildel denne til et element du opretter, når brugeren klikker på en knap.
+
+# Bonus opgaver
+
+6. Udbyg din funktion fra opgave 5, så den kan tage imod en string. Hvis der er en string som argument, skal funktionen kunne "læse" hvad der står i stringen og sætte farven på dit element til enten:
+   Red, Green, Blue, Yellow, Purple eller Random.
+   Hvis man ikke kalder funktionen med et argument skal den altid "defaulte" til at bruge Math.random()
+
+7. Udbyg nu din funktion fra tidligere der kunne indsætte et element i DOM´en til at kunne tage imod resultatet fra din anden funktion. Det vil sige at man kan sætte BG-color på det nye element, ved blot at kalde din farve funktion.
+
