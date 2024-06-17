@@ -8,16 +8,16 @@ let L2_5 = document.querySelector("#L2_5");
 
 //1. Lav en funktion der kan tjekke om en værdi (argumentet) er en string eller et tal og vise det i DOM´en. Det skal gerne ende ud i at der eks. står: 123 er af typen: number, i DOM´en.
 function checkInputValue() {
-    let inputElm = document.createElement('input');
+    const inputElm = document.createElement('input');
     inputElm.type = 'text';
     inputElm.placeholder = 'Input something';
 
-    let msgElm = document.createElement('p');
+    const msgElm = document.createElement('p');
 
     inputElm.addEventListener('input', () => {
-        let value = inputElm.value;
-        let type = !isNaN(value) ? 'number' : 'string';
-        let msg = `${value} is a ${type}`;
+        const value = inputElm.value;
+        const type = !isNaN(value) ? 'number' : 'string';
+        const msg = `${value} is a ${type}`;
 
         msgElm.textContent = msg;
     });
@@ -29,6 +29,17 @@ function checkInputValue() {
 checkInputValue()
 
 //2. Lav en funktion der kan tjekke om en email er korrekt (indeholder @ og slutter på .com/.dk/osv.)
+function checkEmail() {
+    const emailInput = document.createElement('input');
+    emailInput.setAttribute('type', 'email');
+    emailInput.placeholder = 'Din Email';
+
+    
+
+    L2_2.appendChild(emailInput)
+}
+
+checkEmail()
 
 //3. Lav en funktion der kan tjekke om længden på en string er længere end eller lig med 2 bogstaver
 
