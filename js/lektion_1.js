@@ -90,30 +90,51 @@ function countClick() {
 countClick()
 //opgave 5
 //5. Lav en funktion der kan tage imod et ord som argument. Funktionen skal kunne tælle hvor langt ordet er, vise ordet i DOM´en og fortælle brugeren hvor langt ordet er.
-function wordLenght(word) {
-  let trimWord = word.trim().replace(/\s/g, '');
+function wordCount() {
+  // Create input element
+  const wordInput = document.createElement('input');
+  wordInput.type = 'text';
+  wordInput.placeholder = 'Type your text here...';
 
-  let insertedWord = document.createElement('p');
+  // Create element to display word count
+  const wordCountDisplay = document.createElement('div');
+  wordCountDisplay.id = 'wordCount';
+  wordCountDisplay.textContent = 'Word Count: 0';
 
-  let wordLenght = document.createElement('p');
-  insertedWord.innerText = `
-  Word/String:
-  ${word}`;
+  // Add input and word count display to the DOM
+  const container = document.getElementById('L1_5');
+  container.appendChild(wordInput);
+  container.appendChild(wordCountDisplay);
 
-  wordLenght.innerText = `
-  Length without whitespace: ${trimWord.length}
-  Length with whitespace: ${word.length}`;
+  // Function to count words
+  function countWords(text) {
+      // Trim the text to remove extra spaces
+      const trimmedText = text.trim();
 
-  L1_5.appendChild(insertedWord);
-  L1_5.appendChild(wordLenght);
+      // If the input is empty, return 0
+      if (trimmedText === '') {
+          return 0;
+      }
+
+      // Split the text by spaces and filter out empty strings
+      const words = trimmedText.split(/\s+/);
+      return words.length;
+  }
+
+  // Add event listener to update word count on input
+  wordInput.addEventListener('input', () => {
+      const wordCount = countWords(wordInput.value);
+      wordCountDisplay.textContent = `Word Count: ${wordCount}`;
+  });
 }
-wordLenght('tester bare');
+
+wordCount()
 //opgave 6
 //6. Lav en funktion der kan fjerne alle vokaler i en string. Din funktion skal kunne tage imod et ord som argument og "rense" det for alle vokaler inden det vises i DOM´en.
 function removeLetters(word) {
-  let lettersRemoved = word.replace(/[aeiouyæøå]/gi, '');
-  let paragraph = document.createElement('p');
-  paragraph.innerText = `Cleaned word: ${lettersRemoved}`;
+  const lettersRemoved = word.replace(/[aeiouyæøå]/gi, '');
+  const paragraph = document.createElement('p');
+  paragraph.innerText = `Removed: ${lettersRemoved}`;
 
   L1_6.appendChild(paragraph);
 }

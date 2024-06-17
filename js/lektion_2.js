@@ -26,6 +26,8 @@ function checkInputValue() {
     L2_1.appendChild(msgElm);
 }
 
+checkInputValue()
+
 //2. Lav en funktion der kan tjekke om en email er korrekt (indeholder @ og slutter på .com/.dk/osv.)
 
 //3. Lav en funktion der kan tjekke om længden på en string er længere end eller lig med 2 bogstaver
