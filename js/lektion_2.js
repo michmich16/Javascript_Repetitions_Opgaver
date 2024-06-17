@@ -131,3 +131,21 @@ function getRandomNumber() {
 }
 getRandomNumber()
 //5. Lav en funktion der returnerer en tilfældig RGB farve værdi og tildel denne til et element du opretter, når brugeren klikker på en knap.
+function getRGB() {
+    const divElement = document.createElement('div');
+    divElement.style.padding='15px'
+
+    const colorButton = document.createElement('button');
+    colorButton.innerText = 'color me'
+    colorButton.addEventListener('click', colorDiv)
+
+    L2_5.appendChild(divElement);
+    L2_5.appendChild(colorButton);
+
+    function colorDiv() {
+        const randomColor = Math.floor(Math.random()*16777215).toString(16);
+        divElement.innerHTML = '#' + randomColor;
+        divElement.style.backgroundColor = "#" + randomColor;
+    }
+}
+getRGB()
