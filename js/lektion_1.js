@@ -90,16 +90,32 @@ function countClick() {
 countClick()
 //opgave 5
 //5. Lav en funktion der kan tage imod et ord som argument. Funktionen skal kunne tælle hvor langt ordet er, vise ordet i DOM´en og fortælle brugeren hvor langt ordet er.
-function WordCount(str) { 
-  let counterText = document.createElement('p');
-  
-  let wordField = document.createElement('textarea');
-  
-  L1_5.appendChild(counterText);
-  L1_5.appendChild(wordField)
-  counterText.innerText = `this sentence has ${str} words`
-}
+function wordLenght(word) {
+  let trimWord = word.trim().replace(/\s/g, '');
 
- WordCount()
+  let insertedWord = document.createElement('p');
+
+  let wordLenght = document.createElement('p');
+  insertedWord.innerText = `
+  Word/String:
+  ${word}`;
+
+  wordLenght.innerText = `
+  Length without whitespace: ${trimWord.length}
+  Length with whitespace: ${word.length}`;
+
+  L1_5.appendChild(insertedWord);
+  L1_5.appendChild(wordLenght);
+}
+wordLenght('tester bare');
 //opgave 6
 //6. Lav en funktion der kan fjerne alle vokaler i en string. Din funktion skal kunne tage imod et ord som argument og "rense" det for alle vokaler inden det vises i DOM´en.
+function removeLetters(word) {
+  let lettersRemoved = word.replace(/[aeiouyæøå]/gi, '');
+  let paragraph = document.createElement('p');
+  paragraph.innerText = `Cleaned word: ${lettersRemoved}`;
+
+  L1_6.appendChild(paragraph);
+}
+
+removeLetters('testing');
