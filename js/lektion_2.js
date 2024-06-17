@@ -33,13 +33,33 @@ function checkEmail() {
     const emailInput = document.createElement('input');
     emailInput.setAttribute('type', 'email');
     emailInput.placeholder = 'Din Email';
-
     
+    const errorMessage = document.createElement('div');
+    errorMessage.style.color = 'red';
+    errorMessage.style.display = 'none';
+    errorMessage.textContent = 'Emailen er ikke korrekt';
 
-    L2_2.appendChild(emailInput)
+    emailInput.addEventListener('input', () => {
+        const emailValue = emailInput.value;
+        if (!isValidEmail(emailValue)) {
+            errorMessage.style.display = 'block';
+        } else {
+            errorMessage.style.display = 'none';
+        }
+    });
+
+    L2_2.appendChild(emailInput);
+    L2_2.appendChild(errorMessage);
 }
 
-checkEmail()
+function isValidEmail(email) {
+    // Simple email validation regex
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+checkEmail();
+
 
 //3. Lav en funktion der kan tjekke om længden på en string er længere end eller lig med 2 bogstaver
 
